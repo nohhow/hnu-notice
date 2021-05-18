@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>새 탭</title>
+
+	<style>
+		.imgbtn{
+			width: 8%;
+			height:5%;
+		}
+		body{
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		iframe{
+			background-color: white;
+			visibility: hidden;
+		}
+
+		#googleimg{
+			width: 20%;
+			height: 10%;
+		}
+
+		#search{
+			height: 40px;
+			width: 400px;
+			border: 1px solid #1b5ac2;
+			background: #ffffff;
+		}
+
+		#searchtext{
+			font-size: 16px;
+			width: 325px;
+			padding: 10px;
+			border: 0px;
+			outline: none;
+			float: left;
+		}
+
+		#searchbtn{
+			width: 50px;
+			height: 100%;
+			border: 0px;
+			background: #1b5ac2;
+			outline: none;
+			float: right;
+			color: #ffffff;
+		}
+
+	</style>
+</head>
+<body>
+
+	<input type="image" id="bgSetBtn" value = "배경화면변경 팝업" src="icon.png">
+		<center>
+			<br>
+			<!-- 검색창 text창에서 enter입력하면 검색 -->
+			<input id="googleimg" type="image" src="google.png">
+			<div id="search">
+				<input type="text"   id="searchtext" autofocus>
+				<input type="button" id="searchbtn" value="검색">
+			</div>
+
+			<!-- 학사, 장학, 학과 공지 버튼 구현 -->
+			<br>
+			<input class="imgbtn" type="image" id="home" src="home.png">
+			<input class="imgbtn" type="image" id="haksabtn" src="haksa.png">
+			<input class="imgbtn" type="image" id="janghakbtn" src="janghak.png">
+			<input class="imgbtn" type="image" id="computerbtn" src="computer.png">
+			<input class="imgbtn" type="image" id="hiclassbtn" src="hiclass.png">
+			<input class="imgbtn" type="image" id="htqmbtn" src="htqm.png">
+			<br>
+
+
+			<!-- 각 공지사항이 표시될 iframe -->
+			<iframe src="" width="65%" height="800" scrolling="yes" frameborder="0">
+				<p>Your browser does not support to show this contents.</p>
+			</iframe>
+			<br>
+
+		</center>
+		<script src="link.js"></script>
+</body>
+</html>
+
