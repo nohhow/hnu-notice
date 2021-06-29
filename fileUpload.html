@@ -9,14 +9,23 @@
 		#college-select{
 			text-align-last: center;
 		}
+		#fileSubmit, #fileCancel, #fileInput{
+			margin: 10px;
+		}
 	</style>
 </head>
 <body>
-	<h3>배경화면 변경하기</h3>
+	<div>
+		<h3>배경화면 변경하기</h3>
 			<!-- 사용자 배경화면 업로드 폼-->
-			<input type="file" name="file" id="fileInput" accept="image/*">
+			<input type="file" name="file" id="fileInput" accept="image/*"/>
+			<br/>
+			<input type="button" name="submit" id="fileSubmit" value="적용하기"/>
+			<input type="button" name="cancel" id="fileCancel" value="취소하기"/>
+			<br/>
+			<span>파일 선택시 배경화면이 미리보기로 변경됩니다. (적용하기 버튼을 눌러야 적용됩니다.)</span>
+	</div>		
 
-	<br/>
 	<hr/>
 	
 	<h3>학과 설정하기</h3>
@@ -155,7 +164,7 @@
 	</select>
 
 
-
+	<input type="button" id="majorApply" value="적용하기"/>
 
 	<script src="upload.js"></script>
 	<script src="select.js"></script>

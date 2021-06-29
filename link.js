@@ -1,7 +1,15 @@
-// 로컬저장소에 저장된 이미지 불러와서 배경화면 설정
+// 로컬저장소에 저장된 이미지 불러와서 배경화면 설정 및 major 설정
+
+var getMajor = 'info.html';
+
 window.onload = function(){
 	getImage = localStorage.getItem('back');
+	if(localStorage.getItem('major') != ''){
+		getMajor = localStorage.getItem('major');
+	}
+
 	document.querySelector('body').style = `background : url(${getImage}); background-size : cover; background-repeat : no-repeat;`;
+
 }
 
 // 버튼 클릭 이벤트 리스너 설정
@@ -15,9 +23,9 @@ hButton.addEventListener('click', function(){
 	show('haksa');
 })
 
-var cButton = document.getElementById('computerbtn');
+var cButton = document.getElementById('majorbtn');
 cButton.addEventListener('click', function(){
-	show('computer');
+	show('major');
 })
 
 var hiButton = document.getElementById('hiclassbtn');
@@ -76,6 +84,7 @@ function show(click){
 		getLink(click);
 	}
 	else{
+		alert(getMajor);
 		getLink(click);
 	}
 }
@@ -101,5 +110,21 @@ function enterkey(){
 // iframe 보이기 및 링크 설정
 function getLink(click){
 	document.querySelector('iframe').style.visibility = "visible";
-	document.querySelector('iframe').src = click+".html";
+	if(click == 'janghak'){
+		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=MTEw";
+	}else if(click == 'haksa'){
+		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=NzQ1";
+	}else if(click == 'major'){
+		if(getMajor == '' || getMajor == 'info.html'){
+			document.querySelector('iframe').src = "info.html";
+		}else{
+			setMajor();
+		}
+	}
+}
+
+function setMajor(){
+	if(getMajor == '국어국문∙창작학과'){
+		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=MTI3Mg==";
+	}
 }
