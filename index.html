@@ -3,12 +3,52 @@
 <head>
 	<meta charset="utf-8">
 	<title>새 탭</title>
-
 	<style>
-		.imgbtn{
-			width: 8%;
-			height:5%;
+		#bg-white-r{
+			background-color: rgba( 255, 255, 255, 0.5 );
+			box-shadow:0 0.5px 3px rgba(0, 0, 0, 0.5);
+			border-radius: 2em;
+			padding: 20px;
 		}
+		.class_btn{
+			background:#F69B94;
+			color:#fff;
+			border:none;
+			position:relative;
+			height:60px;
+			font-size:1.6em;
+			padding:0 2em;
+			cursor:pointer;
+			transition:800ms ease all;
+			outline:none;
+			width: 10em;
+			height:3em;
+		}
+		.class_btn:hover{
+			background:#fff;
+			color:#F69B94;
+		}
+		.class_btn:before,#class_btn:after{
+			content:'';
+			position:absolute;
+			top:0;
+			right:0;
+			height:2px;
+			width:0;
+			background: #F69B94;
+			transition:400ms ease all;
+		}
+		.class_btn:after{
+			right:inherit;
+			top:inherit;
+			left:0;
+			bottom:0;
+		}
+		.class_btn:hover:before,#class_btn:hover:after{
+			width:100%;
+			transition:800ms ease all;
+		}
+
 		body{
 			padding-top: 20px;
 			padding-left: 20px;
@@ -30,7 +70,7 @@
 		#search{
 			height: 40px;
 			width: 400px;
-			border: 1px solid #1b5ac2;
+			border: 1px solid #F69B94;
 			background: #ffffff;
 		}
 
@@ -47,12 +87,47 @@
 			width: 50px;
 			height: 100%;
 			border: 0px;
-			background: #1b5ac2;
+			background: #F69B94;
 			outline: none;
 			float: right;
 			color: #ffffff;
 		}
 
+		/* style 코드 출처 : https://codesandbox.io/u/sunhwa508 */
+		#info {
+			text-transform: capitalize;
+			font-size: 3rem;
+			white-space: nowrap;
+			color: transparent;
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#info::before {
+			content: "오늘도 좋은 하루 보내세요!";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: #000000;
+			overflow: hidden;
+			border-right: 3px solid black;
+			animation: typing 5s steps(15) infinite;
+		}
+		@keyframes typing {
+			0% {
+				width: 0%;
+			}
+			50% {
+				width: 100%;
+			}
+			100% {
+				width: 0%;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -60,30 +135,33 @@
 			<input type="image" id="bgSetBtn" value = "배경화면변경 팝업" src="icon.png">
 		<center>
 			<br>
-			<!-- 검색창 text창에서 enter입력하면 검색 -->
-			<h1>HANNAM</h1> 
-			<div id="search">
-				<input type="text"   id="searchtext" autofocus>
-				<input type="button" id="searchbtn" value="검색">
+			<div id = "bg-white-r">
+				<!-- 검색창 text창에서 enter입력하면 검색 -->
+				<h1>HANNAM</h1> 
+				<div id="search">
+					<input type="text"   id="searchtext" autofocus>
+					<input type="button" id="searchbtn" value="검색">
+				</div>
+
+				<!-- 학사, 장학, 학과 공지 버튼 구현 -->
+				<br>
+				<input class="class_btn" type="button" id="home" value="홈" >
+				<input class="class_btn" type="button" id="noticebtn" value="공지사항">
+				<input class="class_btn" type="button" id="haksabtn" value="학사공지">
+				<input class="class_btn" type="button" id="janghakbtn" value="장학공지">
+				<input class="class_btn" type="button" id="majorbtn" value="전공공지">
+				<input class="class_btn" type="button" id="hiportalbtn" value="Hi-Portal">
+				<input class="class_btn" type="button" id="hiclassbtn" value="Hi-Class">
+				<input class="class_btn" type="button" id="htqmbtn" value="HTQM">
+				<br>
 			</div>
-
-			<!-- 학사, 장학, 학과 공지 버튼 구현 -->
-			<br>
-			<input class="imgbtn" type="button" id="home" value="홈">
-			<input class="imgbtn" type="button" id="noticebtn" value="공지사항">
-			<input class="imgbtn" type="button" id="haksabtn" value="학사공지">
-			<input class="imgbtn" type="button" id="janghakbtn" value="장학공지">
-			<input class="imgbtn" type="button" id="majorbtn" value="전공공지">
-			<input class="imgbtn" type="button" id="hiportalbtn" value="Hi-Portal">
-			<input class="imgbtn" type="button" id="hiclassbtn" value="Hi-Class">
-			<input class="imgbtn" type="button" id="htqmbtn" value="HTQM">
-			<br>
-
-
-			<!-- 각 공지사항이 표시될 iframe -->
-			<iframe src="" width="65%" height="800" scrolling="yes" frameborder="0">
-				<p>Your browser does not support to show this contents.</p>
-			</iframe>
+			<br/>
+			<div id = "bg-white-r">
+				<!-- 각 공지사항이 표시될 iframe -->
+				<iframe src="" width="65%" height="800" scrolling="yes" frameborder="0" style="display:none;">
+					<p>Your browser does not support to show this contents.</p>
+				</iframe>
+			</div>
 			<br>
 
 		</center>

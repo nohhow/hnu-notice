@@ -33,6 +33,11 @@ cButton.addEventListener('click', function(){
 	show('major');
 })
 
+var portalButton = document.getElementById('hiportalbtn');
+portalButton.addEventListener('click', function(){
+	location.href = "http://my.hnu.kr/"
+})
+
 var hiButton = document.getElementById('hiclassbtn');
 hiButton.addEventListener('click', function(){
 	location.href = "http://hiclass.hannam.ac.kr/"
@@ -116,6 +121,7 @@ function enterkey(){
 
 // iframe 보이기 및 링크 설정
 function getLink(click){
+	document.querySelector('iframe').style.display = "block";
 	document.querySelector('iframe').style.visibility = "visible";
 	if(click == 'janghak'){
 		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=MTEw";
