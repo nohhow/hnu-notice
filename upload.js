@@ -17,6 +17,10 @@ fileCancel.addEventListener('click', function(){
 	self.close();
 })
 
+majorCancel.addEventListener('click', function(){
+	self.close();
+})
+
 fileInput.addEventListener('change', function(e){
 	console.log(e.target.files);
 

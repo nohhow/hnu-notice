@@ -13,6 +13,11 @@ window.onload = function(){
 }
 
 // 버튼 클릭 이벤트 리스너 설정
+var jButton = document.getElementById('noticebtn');
+jButton.addEventListener('click', function(){
+	show('notice');
+})
+
 var jButton = document.getElementById('janghakbtn');
 jButton.addEventListener('click', function(){
 	show('janghak');
@@ -83,8 +88,10 @@ function show(click){
 	else if (click === 'haksa') {
 		getLink(click);
 	}
+	else if (click === 'notice'){
+		getLink(click);
+	}
 	else{
-		alert(getMajor);
 		getLink(click);
 	}
 }
@@ -112,6 +119,8 @@ function getLink(click){
 	document.querySelector('iframe').style.visibility = "visible";
 	if(click == 'janghak'){
 		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=MTEw";
+	}else if(click == 'notice'){
+		document.querySelector('iframe').src = "http://www.hannam.ac.kr/kor/community/community_01_1.html";	
 	}else if(click == 'haksa'){
 		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=NzQ1";
 	}else if(click == 'major'){
