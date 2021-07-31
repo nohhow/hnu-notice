@@ -12,6 +12,59 @@ window.onload = function(){
 
 }
 
+// 자주 방문한 사이트 객체
+function topSite(){}
+var sites = [];
+
+//크롬 자주 방문한 사이트 추출 최대 10개
+chrome.topSites.get(function(info){
+	for(var i=0;i<info.length;i++) {
+		sites[i] = new topSite();
+		sites[i].title = info[i].title;
+		sites[i].url = info[i].url;
+		sites[i].tile_id = "tile_"+i;
+		sites[i].img_id = "top_img_"+i;
+		sites[i].title_id = "top_title_"+i;
+		setSites(sites[i]);
+		// alert(info[i].url);
+	}
+});
+
+// 요소에 각각 자주 방문한 사이트 적용
+function setSites(site){
+	var tile_element = document.getElementById(site.tile_id);
+	var img_element = document.getElementById(site.img_id);
+	var title_element = document.getElementById(site.title_id);
+	
+	var regex = /(http(s)?:\/\/)([a-z0-9\w]+\.*)+[a-z0-9]{2,4}/gi;
+	var result_url = site.url.match(regex);
+
+	img_element.src = result_url+'/favicon.ico';
+
+	img_element.addEventListener('click', function(){
+		location.href = site.url;
+	})
+	img_element.addEventListener('error', function(){
+		this.src = 'favicon.png';
+	})
+
+	tile_element.href = site.url;
+	title_element.innerText = site.title;
+}
+
+//tile에 대한 마우스 over, out 이벤트 설정
+var tiles = document.querySelectorAll(".tile");
+var tilesLength = tiles.length;
+
+for(var i=0; i < tilesLength; i++){
+	tiles[i].addEventListener("mouseover",function(){
+		this.style.opacity = 0.5;
+	});
+	tiles[i].addEventListener('mouseout', function(){
+		this.style.opacity = 1;
+	});
+}
+
 // 버튼 클릭 이벤트 리스너 설정
 var jButton = document.getElementById('noticebtn');
 jButton.addEventListener('click', function(){
@@ -121,6 +174,7 @@ function enterkey(){
 
 // iframe 보이기 및 링크 설정
 function getLink(click){
+	document.getElementById('websites').style.display = "none";
 	document.querySelector('iframe').style.display = "block";
 	document.querySelector('iframe').style.visibility = "visible";
 	if(click == 'janghak'){

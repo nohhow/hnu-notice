@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>새 탭</title>
+
+
 	<style>
 		#bg-white-r{
 			background-color: rgba( 255, 255, 255, 0.5 );
@@ -93,46 +95,71 @@
 			color: #ffffff;
 		}
 
-		/* style 코드 출처 : https://codesandbox.io/u/sunhwa508 */
-		#info {
-			text-transform: capitalize;
-			font-size: 3rem;
-			white-space: nowrap;
-			color: transparent;
-			margin: 0;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		/* GOOGLE TILE ICON*/
+		.tile-icon {
+			align-items: center;
+			background-color: rgb(255, 255, 255);
+			box-shadow:0 0.5px 3px rgba(0, 0, 0, 0.5);
+			border-radius: 50%;
+			display: flex;
+			flex-shrink: 0;
+			height: 48px;
+			justify-content: center;
+			margin-top: 16px;
+			margin-bottom: 16px;
+			width: 48px;
 		}
-		#info::before {
-			content: "오늘도 좋은 하루 보내세요!";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			color: #000000;
+		.tile-title {
+			align-items: center;
+			display: flex;
+			margin-top: 6px;
+			padding: 2px 8px;
+			width: 88px;
+		}
+		.tile-title span {
 			overflow: hidden;
-			border-right: 3px solid black;
-			animation: typing 5s steps(15) infinite;
+			text-align: center;
+			text-overflow: ellipsis;
+			color: #000000;
+			white-space: nowrap;
+			width: 100%;
 		}
-		@keyframes typing {
-			0% {
-				width: 0%;
-			}
-			50% {
-				width: 100%;
-			}
-			100% {
-				width: 0%;
-			}
+		.tile {
+			-webkit-tap-highlight-color: transparent;
+			align-items: center;
+			border-radius: 4px;
+			box-sizing: border-box;
+			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			height: 112px;
+			opacity: 1;
+			outline: none;
+			position: relative;
+			text-decoration: none;
+			transition-duration: 300ms;
+			transition-property: left, top;
+			transition-timing-function: ease-in-out;
+			user-select: none;
+			width: 112px;
 		}
+
+		#container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.icons{
+			width: 24px;
+			height: 24px;
+		}
+		
 	</style>
 </head>
 <body>
 
-			<input type="image" id="bgSetBtn" value = "배경화면변경 팝업" src="icon.png">
+		<input type="image" id="bgSetBtn" value = "배경화면변경 팝업" src="icon.png">
 		<center>
 			<br>
 			<div id = "bg-white-r">
@@ -142,7 +169,7 @@
 					<input type="text"   id="searchtext" autofocus>
 					<input type="button" id="searchbtn" value="검색">
 				</div>
-
+	
 				<!-- 학사, 장학, 학과 공지 버튼 구현 -->
 				<br>
 				<input class="class_btn" type="button" id="home" value="홈" >
@@ -157,6 +184,92 @@
 			</div>
 			<br/>
 			<div id = "bg-white-r">
+				<!-- 자주 방문한 사이트 뷰 -->
+				<div id = "websites" style="display: block;">
+					<h1>자주 방문한 사이트</h1>
+					<div id="container">
+						<a class="tile" id ="tile_0" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_0" value = "top0" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_0"></span>
+							</div>
+						</a>
+						<a class="tile" id ="tile_1" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_1" value = "top1" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_1"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_2" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_2" value = "top2" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_2"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_3" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_3" value = "top3" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_3"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_4" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_4" value = "top4" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_4"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_5" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_5" value = "top5" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_5"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_6" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_6" value = "top6" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_6"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_7" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_7" value = "top7" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_7"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_8" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_8" value = "top8" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_8"></span>
+							</div>					
+						</a>
+						<a class="tile" id ="tile_9" href="">
+							<div class="tile-icon">
+								<input class="icons" type="image" id ="top_img_9" value = "top9" src="favicon.png">
+							</div>
+							<div class="tile-title">
+								<span id="top_title_9"></span>
+							</div>
+						</a>
+					</div>
+				</div>
 				<!-- 각 공지사항이 표시될 iframe -->
 				<iframe src="" width="65%" height="800" scrolling="yes" frameborder="0" style="display:none;">
 					<p>Your browser does not support to show this contents.</p>
