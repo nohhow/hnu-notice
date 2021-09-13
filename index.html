@@ -3,12 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<title>새 탭</title>
-
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
 	<style>
-		#bg-white-r{
+		h1, h2, h3{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+
+		.count-down > h2{
+			margin:10px;
+			font-size: 5rem;
+		}
+		.bg-white-r{
 			background-color: rgba( 255, 255, 255, 0.5 );
-			box-shadow:0 0.5px 3px rgba(0, 0, 0, 0.5);
+			box-shadow:0 0.5px 3px rgb(0, 0, 0);
 			border-radius: 2em;
 			padding: 20px;
 		}
@@ -167,7 +177,7 @@
 		<input type="image" id="bgSetBtn" value = "배경화면변경 팝업" src="icon.png">
 		<center>
 			<br>
-			<div id = "bg-white-r">
+			<div class = "bg-white-r">
 				<!-- 검색창 text창에서 enter입력하면 검색 -->
 				<h1>HANNAM</h1> 
 				<div id="search">
@@ -189,7 +199,14 @@
 				</div>
 			</div>
 			<br/>
-			<div id = "bg-white-r">
+			<div class = "bg-white-r count-box" style="display:block;">
+				<div class='count-down'>
+					<h1>종강까지</h1>
+					<h2><br></h2>
+				</div>
+			</div>
+			<br class="count-box" style="display:block;"/>
+			<div class = "bg-white-r">
 				<!-- 자주 방문한 사이트 뷰 -->
 				<div id = "websites" style="display: block;">
 					<h1>자주 방문한 사이트</h1>
@@ -285,6 +302,7 @@
 
 		</center>
 		<script src="link.js"></script>
+		<script src="count.js"></script>
 </body>
 </html>
 

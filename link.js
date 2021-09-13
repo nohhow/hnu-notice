@@ -1,6 +1,6 @@
 // 로컬저장소에 저장된 이미지 불러와서 배경화면 설정 및 major 설정
 
-var getMajor = 'info.html';
+var getMajor = '';
 
 window.onload = function(){
 	getImage = localStorage.getItem('back');
@@ -174,6 +174,11 @@ function enterkey(){
 
 // iframe 보이기 및 링크 설정
 function getLink(click){
+	var countBoxes = document.querySelectorAll('.count-box');
+	for(i=0; i<countBoxes.length; i++){
+		countBoxes[i].style.display='none';
+	}
+	
 	document.getElementById('websites').style.display = "none";
 	document.querySelector('iframe').style.display = "block";
 	document.querySelector('iframe').style.visibility = "visible";
@@ -184,10 +189,10 @@ function getLink(click){
 	}else if(click == 'haksa'){
 		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=NzQ1";
 	}else if(click == 'major'){
-		if(getMajor == '' || getMajor == 'info.html'){
-			document.querySelector('iframe').src = "info.html";
-		}else{
+		if(getMajor != ''){
 			setMajor();
+		}else{
+			document.querySelector('iframe').src = "info.html";
 		}
 	}
 }
