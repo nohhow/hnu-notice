@@ -1,7 +1,7 @@
 const dday = document.querySelector(".count-down");
 const countDown = dday.querySelector("h2");
 
-setInterval(function getTime() {
+var startClock = setInterval(function getTime() {
   // Don't delete this.
   const finishDay = new Date("2021-12-21:00:00:00+0900");
   const nowDay = new Date();
