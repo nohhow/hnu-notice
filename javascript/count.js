@@ -1,5 +1,5 @@
 const dday = document.querySelector(".count-down");
-const countDown = dday.querySelector("h2");
+const countDown = dday.querySelector(".clock-view");
 
 var startClock = setInterval(function getTime() {
   // Don't delete this.
