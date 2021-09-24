@@ -31,10 +31,17 @@ h1, h2, h3{
     font-size: 5rem;
 }
 
-@media (max-width : 1028px){
+@media (min-width : 651px) and (max-width : 1028px){
     .clock-view{
         margin:10px;
         font-size: 3rem;
+    }
+}
+
+@media (max-width : 650px){
+    .clock-view{
+        margin:10px;
+        font-size: 2rem;
     }
 }
 
