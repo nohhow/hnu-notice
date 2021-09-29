@@ -1,4 +1,22 @@
-// 로컬저장소에 저장된 이미지 불러와서 배경화면 설정 및 major 설정
+// 종강시계
+const dday = document.querySelector(".count-down");
+const countDown = dday.querySelector(".clock-view");
+
+var startClock = setInterval(function getTime() {
+  // Don't delete this.
+  const finishDay = new Date("2021-12-21:00:00:00+0900");
+  const nowDay = new Date();
+  const gap = finishDay - nowDay
+  const day = Math.floor(gap / (1000 * 60 * 60 * 24)); //일
+  const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); //분
+  const minute = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)); 
+  const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+  countDown.innerText = `${day}일 ${hours < 10 ? `0${hours}` : hours}시 ${minute < 10 ? `0${minute}` : minute}분 ${
+  seconds < 10 ? `0${seconds}` : seconds}초`
+},1000);
+
+// 로컬저장소에 저장된 이미지 불러와서 배경화면 설정 및 major 설정, 종강시계 시작
 
 var getMajor = '';
 
@@ -9,7 +27,6 @@ window.onload = function(){
 	}
 
 	document.querySelector('body').style = `background : url(${getImage}); background-size : cover; background-repeat : no-repeat;`;
-	startClock();
 }
 
 // 자주 방문한 사이트 객체

@@ -51,6 +51,7 @@ h1, h2, h3{
     box-shadow:0 0.5px 3px rgb(0, 0, 0);
     border-radius: 2em;
     padding: 20px;
+    text-align: center;
 }
 
 .class_btn_container{
@@ -100,6 +101,7 @@ h1, h2, h3{
 iframe{
     background-color: white;
     visibility: hidden;
+    margin: auto;
 }
 
 #googleimg{
@@ -110,8 +112,7 @@ iframe{
 #search{
     height: 45Px;
     width: 30%;
-    padding-bottom: 1rem;
-    background: #ffffff;
+    margin-bottom: 1rem;
     display: inline-block;
     text-align: center;
 }
@@ -126,7 +127,7 @@ iframe{
 }
 
 #searchbtn{
-    width: 15%;
+    width: 50px;
     height: 100%;
     background: #F69B94;
     border: 1px solid #F69B94;

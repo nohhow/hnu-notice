@@ -12,10 +12,12 @@
 
   "permissions": [
     "<all_urls>",
-    "topSites"
+    "topSites",
+    "http://fonts.googleapis.com/",
+    "https://fonts.googleapis.com/"
   ],
 
-  "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net;     object-src 'self'",
+  "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net;     object-src 'self'; ",
 
 
   "chrome_url_overrides" : {
