@@ -9,7 +9,7 @@ window.onload = function(){
 	}
 
 	document.querySelector('body').style = `background : url(${getImage}); background-size : cover; background-repeat : no-repeat;`;
-
+	startClock();
 }
 
 // 자주 방문한 사이트 객체
