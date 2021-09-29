@@ -110,6 +110,7 @@ iframe{
 #search{
     height: 45Px;
     width: 30%;
+    padding-bottom: 1rem;
     background: #ffffff;
     display: inline-block;
     text-align: center;
