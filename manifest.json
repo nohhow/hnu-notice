@@ -3,7 +3,7 @@
 
   "name": "HNU-Notice",
   "description": "한남대학교 학사, 취업, 장학, 컴퓨터공학과 공지를 한 번에 확인",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author" : "Jinhyun Noh",
 
   "browser_action": {
@@ -12,9 +12,7 @@
 
   "permissions": [
     "<all_urls>",
-    "topSites",
-    "http://fonts.googleapis.com/",
-    "https://fonts.googleapis.com/"
+    "topSites"
   ],
 
   "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net;     object-src 'self'; ",
