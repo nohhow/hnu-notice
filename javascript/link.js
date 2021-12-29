@@ -4,12 +4,12 @@ const countDown = dday.querySelector(".clock-view");
 
 var startClock = setInterval(function getTime() {
   // Don't delete this.
-  const finishDay = new Date("2021-12-21:00:00:00+0900");
+  const finishDay = new Date("2022-03-01:00:00:00+0900");
   const nowDay = new Date();
   const gap = finishDay - nowDay
   const day = Math.floor(gap / (1000 * 60 * 60 * 24)); //일
   const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); //분
-  const minute = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60)); 
+  const minute = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((gap % (1000 * 60)) / 1000);
 
   countDown.innerText = `${day}일 ${hours < 10 ? `0${hours}` : hours}시 ${minute < 10 ? `0${minute}` : minute}분 ${
@@ -52,7 +52,7 @@ function setSites(site){
 	var tile_element = document.getElementById(site.tile_id);
 	var img_element = document.getElementById(site.img_id);
 	var title_element = document.getElementById(site.title_id);
-	
+
 	var regex = /(http(s)?:\/\/)([a-z0-9\w]+\.*)+[a-z0-9]{2,4}/gi;
 	var result_url = site.url.match(regex);
 
@@ -139,14 +139,14 @@ goHome.addEventListener('click', function(){
 
 // 	var file = e.target.files[0]; //선택된 파일
 // 	var reader = new FileReader();
-// 	reader.readAsDataURL(file); //파일을 읽는 메서드 
-	
+// 	reader.readAsDataURL(file); //파일을 읽는 메서드
+
 // 	reader.onload = function(){
 // 		var photoFrame = document.querySelector("body");
 // 		photoFrame.style = `background : url(${reader.result}); background-size : cover; background-repeat : no-repeat`;
 // 		localStorage.setItem('back', reader.result);
 // 	  }
-// })	  
+// })
 
 var gofileUpload = document.getElementById('bgSetBtn');
 gofileUpload.addEventListener('click', function(){
@@ -195,14 +195,14 @@ function getLink(click){
 	for(i=0; i<countBoxes.length; i++){
 		countBoxes[i].style.display='none';
 	}
-	
+
 	document.getElementById('websites').style.display = "none";
 	document.querySelector('iframe').style.display = "block";
 	document.querySelector('iframe').style.visibility = "visible";
 	if(click == 'janghak'){
 		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=MTEw";
 	}else if(click == 'notice'){
-		document.querySelector('iframe').src = "http://www.hannam.ac.kr/kor/community/community_01_1.html";	
+		document.querySelector('iframe').src = "http://www.hannam.ac.kr/kor/community/community_01_1.html";
 	}else if(click == 'haksa'){
 		document.querySelector('iframe').src = "http://uniboard.hannam.ac.kr/servlet/controller.helpdesk.UniboardServlet?seq=NzQ1";
 	}else if(click == 'major'){
